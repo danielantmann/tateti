@@ -27,6 +27,11 @@ function makeMove(cell) {
         div.appendChild(nodoH3);
         table.insertAdjacentElement('afterend',div);
         disableCells(); // Llamar a la función para deshabilitar las celdas  
+        } else if (board.every(cell => cell !== '')) { // Verificar si hay un empate
+            nodoH3.innerHTML = '¡Empate!';
+            div.appendChild(nodoH3);
+            table.insertAdjacentElement('afterend', div);
+            disableCells(); // Deshabilitar las celdas
         } else {
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         }
