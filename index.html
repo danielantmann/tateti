@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
     <title>TaTeTi</title>
 </head>
+
 <body>
-    
+
+    <h1 class="silkscreen-bold">Tres en raya</h1>
     <table id="myTable">
         <tr>
             <td name="1" onclick="makeMove(this)"></td>
@@ -18,7 +24,7 @@
         <tr>
             <td name="4" onclick="makeMove(this)"></td>
             <td name="5" onclick="makeMove(this)"></td>
-            <td name="6"onclick="makeMove(this)"></td>
+            <td name="6" onclick="makeMove(this)"></td>
         </tr>
         <tr>
             <td name="7" onclick="makeMove(this)"></td>
@@ -28,7 +34,8 @@
     </table>
 
     <form action="">
-        <input type="button" onclick="resetGame()" value="Reiniciar">
+        <button type="submit" onclick="resetGame()"> <img src="../img/reiniciar.png" alt=""></button>
     </form>
 </body>
+
 </html>

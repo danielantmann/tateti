@@ -1,15 +1,80 @@
-table {
-    border-collapse: collapse;
-    margin: 20px auto;
-}
-td {
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    font-size: 24px;
-    border: 1px solid #000;
-    cursor: pointer;
-}
-td:hover {
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
+
+.silkscreen-regular {
+    font-family: "Silkscreen", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .silkscreen-bold {
+    font-family: "Silkscreen", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+td {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #333;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+td:hover {
+    background-color: #e0e0e0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button img {
+    width: 60px;
+    height: 60px;
+}
+
+@media (max-width: 600px) {
+    td {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    button img {
+        max-width: 30px;
+        max-width: 30px;
+    }
+}
+
+.disabled {
+    pointer-events: none; /* Desactiva los eventos del mouse */
+    opacity: 0.5; /* Cambia la opacidad para indicar que está deshabilitado */
+}
+

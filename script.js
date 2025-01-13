@@ -1,7 +1,10 @@
 let currentPlayer = 'X';
 let board = ['', '', '', '', '', '', '', '', '']; // Representa el estado del tablero
 const table = document.getElementById('myTable');
+let div = document.createElement('div');
+let imgGanador = document.createElement('img');
 let nodoH3 = document.createElement("h3");
+nodoH3.className ="silkscreen-regular";
 
 
 function makeMove(cell) {
@@ -15,9 +18,15 @@ function makeMove(cell) {
 
         board[index] = currentPlayer; // Actualizar el estado del tablero
         if (verifyWinner()) {
-        nodoH3.innerHTML = currentPlayer + ' ha ganado!';
-        table.insertAdjacentElement('afterend',nodoH3);
-            
+        imgGanador.src = currentPlayer === 'X' ? "../img/borrar.png" : '../img/circunferencia.png';
+        imgGanador.style.width = '80px'; // Ajusta el tamaño de la imagen
+        imgGanador.style.height = '80px'; // Ajusta el tamaño de la imagen
+        imgGanador.style.marginLeft = '25px';
+        nodoH3.innerHTML = ' ha ganado!';
+        div.appendChild(imgGanador);
+        div.appendChild(nodoH3);
+        table.insertAdjacentElement('afterend',div);
+        disableCells(); // Llamar a la función para deshabilitar las celdas  
         } else {
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         }
@@ -43,6 +52,13 @@ function verifyWinner() {
         }
     }
     return false; // No hay ganador
+}
+
+function disableCells() {
+    const cells = document.querySelectorAll('td');
+    cells.forEach(cell => {
+        cell.classList.add('disabled'); // Agregar la clase 'disabled' a cada celda
+    });
 }
 
 function resetGame() {
