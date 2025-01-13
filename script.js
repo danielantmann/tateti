@@ -3,10 +3,16 @@ let board = ['', '', '', '', '', '', '', '', '']; // Representa el estado del ta
 const table = document.getElementById('myTable');
 let nodoH3 = document.createElement("h3");
 
+
 function makeMove(cell) {
     const index = cell.getAttribute('name') - 1; // Obtener el índice de la celda
     if (cell.innerHTML === '' && board[index] === '') {
-        cell.innerHTML = currentPlayer;
+        const img = document.createElement('img');
+        img.src = currentPlayer === 'X' ? "../img/borrar.png" : '../img/circunferencia.png'; // Cambia las rutas a tus imágenes
+        img.style.width = '80px'; // Ajusta el tamaño de la imagen
+        img.style.height = '80px'; // Ajusta el tamaño de la imagen
+        cell.appendChild(img); // Insertar la imagen en la celda
+
         board[index] = currentPlayer; // Actualizar el estado del tablero
         if (verifyWinner()) {
         nodoH3.innerHTML = currentPlayer + ' ha ganado!';
