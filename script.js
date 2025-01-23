@@ -1,5 +1,5 @@
 let currentPlayer = 'X';
-let board = ['', '', '', '', '', '', '', '', '']; // Representa el estado del tablero
+let board = ['', '', '', '', '', '', '', '', '']; 
 const table = document.getElementById('myTable');
 let div = document.createElement('div');
 let imgGanador = document.createElement('img');
@@ -11,16 +11,15 @@ function makeMove(cell) {
     const index = cell.getAttribute('name') - 1; // Obtener el índice de la celda
     if (cell.innerHTML === '' && board[index] === '') {
         const img = document.createElement('img');
-        img.src = currentPlayer === 'X' ? "../img/borrar.png" : '../img/circunferencia.png'; // Cambia las rutas a tus imágenes
-        img.style.width = '80px'; // Ajusta el tamaño de la imagen
-        img.style.height = '80px'; // Ajusta el tamaño de la imagen
+        img.src = currentPlayer === 'X' ? "../img/borrar.png" : '../img/circunferencia.png'; 
+        img.style.width = '80px'; 
+        img.style.height = '80px';
         cell.appendChild(img); // Insertar la imagen en la celda
-
         board[index] = currentPlayer; // Actualizar el estado del tablero
         if (verifyWinner()) {
         imgGanador.src = currentPlayer === 'X' ? "../img/borrar.png" : '../img/circunferencia.png';
-        imgGanador.style.width = '80px'; // Ajusta el tamaño de la imagen
-        imgGanador.style.height = '80px'; // Ajusta el tamaño de la imagen
+        imgGanador.style.width = '80px'; 
+        imgGanador.style.height = '80px'; 
         imgGanador.style.marginLeft = '25px';
         nodoH3.innerHTML = ' ha ganado!';
         div.appendChild(imgGanador);
